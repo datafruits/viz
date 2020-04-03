@@ -1,13 +1,13 @@
 # viz setup
 
 
-Here is how to build on of these viz servers from scratch :)
-
-sudo apt-get install build-essential libpcre3 libpcre3-dev libssl-dev
-wget http://nginx.org/download/nginx-1.14.0.tar.gz
-wget https://github.com/arut/nginx-rtmp-module/archive/master.zip
-sudo apt-get install unzip
-tar -zxvf nginx-1.14.0.tar.gz
+Here is how to build on of these viz servers from scratch :)<br/>
+<br/>
+sudo apt-get install build-essential libpcre3 libpcre3-dev libssl-dev <br/>
+wget http://nginx.org/download/nginx-1.14.0.tar.gz<br/>
+wget https://github.com/arut/nginx-rtmp-module/archive/master.zip<br/>
+sudo apt-get install unzip<br/>
+tar -zxvf nginx-1.14.0.tar.gz<br/>
 unzip master.zip  
 cd nginx-1.14.0/
 ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module-master
