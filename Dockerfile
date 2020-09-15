@@ -18,10 +18,8 @@ RUN mkdir /HLS/live
 RUN mkdir /HLS/mobile
 RUN mkdir /video_recordings
 RUN chmod -R 777 /video_recordings
-RUN ufw limit ssh
-RUN ufw allow 80
-RUN ufw allow 1935
-RUN ufw enable
 ADD crossdomain.xml /usr/local/nginx/html/crossdomain.xml
+
+EXPOSE 80 443 1935
 
 CMD ["nginx", "-c", "nginx.conf"]
