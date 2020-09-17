@@ -29,6 +29,6 @@ ADD crossdomain.xml /usr/local/nginx/html/crossdomain.xml
 ADD nginx.conf /home/www
 RUN sudo chown -R www:www /usr/local/nginx
 
-EXPOSE 80 443 1935
+EXPOSE 1024 443 1935
 
 CMD ["/usr/local/nginx/sbin/nginx", "-c", "/home/www/nginx.conf"]
