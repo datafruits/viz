@@ -31,4 +31,5 @@ RUN sudo chown -R www:www /usr/local/nginx
 
 EXPOSE 80 443 1935
 
+# do the envsubst here ???
 CMD ["/usr/local/nginx/sbin/nginx", "-c", "/home/www/nginx.conf"]
