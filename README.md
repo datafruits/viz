@@ -10,8 +10,8 @@ docker run  -p 1935:1935 -p 8080:8080 -p 16666:4443 -v /home/deploy/viz/fullchai
 When the cert expires unfortunately these steps need to happen.
 ```
 $ cd /home/deploy/viz
-$ sudo cp /etc/letsencrypt/live/viz.streampusher.com/privkey.pem .
-$ sudo cp /etc/letsencrypt/live/viz.streampusher.com/fullchain.pem .
+$ sudo cp /etc/letsencrypt/live/datafruits.streampusher.com/privkey.pem .
+$ sudo cp /etc/letsencrypt/live/datafruits.streampusher.com/fullchain.pem .
 ```
 
 Then stop the container and start it again with the same command.
