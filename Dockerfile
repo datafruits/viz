@@ -24,9 +24,13 @@ RUN mkdir /home/www/HLS
 RUN mkdir /home/www/HLS/live
 RUN mkdir /home/www/HLS/mobile
 RUN mkdir /home/www/video_recordings
+RUN mkdir /home/www/rtmpconf
+RUN mkdir /home/www/httpconf
 RUN chmod -R 777 /home/www/video_recordings
 ADD crossdomain.xml /usr/local/nginx/html/crossdomain.xml
 ADD nginx.conf /home/www
+ADD httpdev.conf /home/www/httpconf/dev.conf
+ADD rtmpdev.conf /home/www/rtmpconf/dev.conf
 RUN sudo chown -R www:www /usr/local/nginx
 
 EXPOSE 80 443 1935
