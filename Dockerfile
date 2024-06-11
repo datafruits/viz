@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y build-essential libpcre3 libpcre3-dev libssl-dev unzip ffmpeg wget zlib1g zlib1g-dev libssl-dev sudo
+RUN apt-get install -y build-essential libpcre3 libpcre3-dev libssl-dev unzip ffmpeg wget zlib1g zlib1g-dev libssl-dev sudo curl
 
 RUN useradd --create-home -s /bin/bash www ;\
   adduser www sudo
@@ -28,6 +28,11 @@ RUN chmod -R 777 /home/www/video_recordings
 ADD crossdomain.xml /usr/local/nginx/html/crossdomain.xml
 ADD nginx.conf /home/www
 RUN sudo chown -R www:www /usr/local/nginx
+
+# aws cli
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN unzip -u awscliv2.zip
+RUN sudo ./aws/install
 
 EXPOSE 80 443 1935
 
